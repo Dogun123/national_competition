@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="map contents for Korean elementary social subject"
+    />
+    <meta name="author" content="Dogun" />
+    <title>인구피라미드</title>
+    <script
+      src="https://kit.fontawesome.com/02390708a3.js"
+      crossorigin="anonymous"
+    ></script>
+
+    <link rel="stylesheet" href="public/learning.css" />
+    <script src="public/learning.js" defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.15.5/xlsx.full.min.js"></script>
+  </head>
+  <body
+    oncontextmenu="return false"
+    ondragstart="return false"
+    onselectstart="return false"
+  >
+    <div class="progress_container">
+      <div class="progress_index">
+        <button class="index_dutorial" onclick="location.href='dutorial.html'">
+          튜토리얼
+        </button>
+        <button class="index_learn" onclick="location.href='learn.html'">
+          학습하기
+        </button>
+        <button class="index_problem1" onclick="location.href='learning.html'">
+          문제해결1
+        </button>
+        <button class="index_problem2" onclick="location.href='predict.html'">
+          문제해결2
+        </button>
+      </div>
+      <div class="progress">
+        <button class="homeButton" onclick="location.href='index.html'">
+          <i class="fas fa-home"></i>
+        </button>
+        <div>
+          <div>진행도</div>
+          <div class="progress_percent">0%</div>
+        </div>
+        <li></li>
+      </div>
+    </div>
+
+    <section id="chart" class="section">
+      <div class="popu__section__container">
+        <div class="population__chart__container">
+          <div class="population__chart__left">
+            <ul></ul>
+          </div>
+          <div class="population__chart__mid">
+            <div class="population__bar__age_1">90~</div>
+            <div class="population__bar__age_1">80~89</div>
+            <div class="population__bar__age_1">70~79</div>
+            <div class="population__bar__age_1">60~69</div>
+            <div class="population__bar__age_1">50~59</div>
+            <div class="population__bar__age_1">40~49</div>
+            <div class="population__bar__age_1">30~39</div>
+            <div class="population__bar__age_1">20~29</div>
+            <div class="population__bar__age_1">10~19</div>
+            <div class="population__bar__age_1">0~9</div>
+          </div>
+          <div class="population__chart__right">
+            <ul></ul>
+          </div>
+        </div>
+
+        <div class="birthpopu__container">
+          <div class="population__chart__left">
+            <ul class="birthpopu_left"></ul>
+          </div>
+          <div class="population__chart__mid">
+            <div class="birthpopulation">출생인구</div>
+          </div>
+          <div class="population__chart__left">
+            <ul class="birthpopu_right"></ul>
+          </div>
+          <input
+            id="rangeL"
+            type="range"
+            min="0"
+            ,
+            max="10"
+            value="10"
+            steps="1"
+          />
+          <input
+            id="rangeR"
+            type="range"
+            min="0"
+            ,
+            max="10"
+            value="0"
+            steps="1"
+          />
+        </div>
+
+        <div class="popu__year">
+          <div class="popu__year__container">
+            <div class="year_control">
+              <div class="play_container">
+                <button class="stopbutton"><i class="fas fa-stop"></i></button>
+                <button class="playbutton"><i class="fas fa-play"></i></button>
+              </div>
+              <div class="speed_box">
+                <button class="slowbutton">
+                  <i class="fas fa-angle-double-left"></i>
+                </button>
+                <p class="playSpeed">x1</p>
+                <button class="fastbutton">
+                  <i class="fas fa-angle-double-right"></i>
+                </button>
+              </div>
+              <div class="year_box">
+                <button class="leftbutton">
+                  <i class="fas fa-angle-double-left"></i>
+                </button>
+                <div class="population__year">0000</div>
+                <p>년</p>
+                <button class="rightbutton">
+                  <i class="fas fa-angle-double-right"></i>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="hint_container">
+        <p class="hint"></p>
+        <div class="hint__close">닫기</div>
+      </div>
+    </section>
+
+    <div class="wrapper">
+      <div class="gamerule">
+        <div class="script__arrow__container">
+          <div class="script__arrow__down">
+            접기
+            <i class="fas fa-chevron-down"></i>
+          </div>
+          <div class="script__arrow__up">
+            펼치기
+            <i class="fas fa-chevron-up"></i>
+          </div>
+        </div>
+
+        <img class="character" src="public/imgs/penguin.png" alt="" />
+
+        <div class="script__container">
+          <div class="script"></div>
+          <div class="script__button__container">
+            <div class="script__button__box">
+              <button class="script_button_1"></button>
+              <button class="script_button_2"></button>
+              <button class="script_button_3"></button>
+              <button class="script_button_4"></button>
+              <button class="script_button_a">
+                <a href="learn.html"></a>
+              </button>
+              <button class="script_button_b">
+                <a href="predict.html"></a>
+              </button>
+            </div>
+            <div>
+              <button class="hint_button">힌트</button>
+            </div>
+          </div>
+          <div class="skip__button__box">
+            <div class="back__button">< 이전</div>
+            <div class="skip__button">다음 ></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <audio id="wrongAudio" src="public/music/wrong answer.mp3"></audio>
+    <audio id="correctAudio" src="public/music/correct answer.mp3"></audio>
+    <audio id="click" src="public/music/click.wav"></audio>
+    <audio id="tap" src="public/music/tapSound.wav"></audio>
+  </body>
+</html>

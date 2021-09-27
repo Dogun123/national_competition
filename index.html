@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="map contents for Korean elementary social subject"
+    />
+    <meta name="author" content="Dogun" />
+    <title>인구피라미드</title>
+    <script
+      src="https://kit.fontawesome.com/02390708a3.js"
+      crossorigin="anonymous"
+    ></script>
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="\public\style_pdg.css" />
+    <script src="\public\cover.js" defer></script>
+    <script
+      type="text/javascript"
+      src="//dapi.kakao.com/v2/maps/sdk.js?appkey=ad88d7a8e094180a8cd1057c875dd395"
+    ></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.15.5/xlsx.full.min.js"></script>
+    <!-- chart.js CDN -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.min.js"></script>
+    <!-- google charts -->
+    <script
+      type="text/javascript"
+      src="https://www.gstatic.com/charts/loader.js"
+    ></script>
+  </head>
+  <body
+    style="
+      background: url(/public/imgs/home-background.png) no-repeat center center
+        fixed;
+      background-size: cover;
+    "
+  >
+    <!-- Summary -->
+    <section id="summary">
+      <div class="summary__description">
+        <h1 class="summary__title">인구 피라미드로 알아보는 대한민국 인구</h1>
+        <div class="learningButton">
+          <button
+            class="summary__entrance"
+            onclick="location.href='dutorial.html'"
+          >
+            학습하기>>
+          </button>
+        </div>
+        <div class="etcButton">
+          <button
+            class="summary__entrance"
+            onclick="location.href='population.html'"
+          >
+            차트보기
+          </button>
+          <button class="levelSelect_Button">게임하기</button>
+          <button class="summary__entrance" onclick="location.href='test.html'">
+            시험보기
+          </button>
+        </div>
+        <div class="file_download">
+          <a class="file_link" href="/public/population-pyramid.hwp">
+            <i
+              class="fas fa-file-download"
+              style="font-size: 45px; line-height: 65px"
+            ></i>
+          </a>
+        </div>
+        <div>
+          <p style="position: relative; bottom: 30px; left: 75px; color: black">
+            *학습하기전에 꼭 파일을 다운로드하여 출력하세요.
+          </p>
+        </div>
+      </div>
+    </section>
+    <div class="levelSelect_container">
+      <div class="levelSelect">
+        <button class="levelSelect_checkButton">
+          <i class="fas fa-times-circle"></i>
+        </button>
+        <div>
+          <button class="easy_button" onclick="location.href='game1.html'">
+            쉬움
+          </button>
+        </div>
+        <div>
+          <button class="easy_button" onclick="location.href='game2.html'">
+            보통
+          </button>
+        </div>
+        <div>
+          <button class="easy_button" onclick="location.href='game3.html'">
+            어려움
+          </button>
+        </div>
+      </div>
+    </div>
+    <!-- About -->
+    <section id="about" class="section">
+      <div class="section__container">
+        <h1>대한민국(Republic of Korea)</h1>
+        <div class="aboutset">
+          <div class="korea__description">
+            <div id="about__content" class="population">
+              <div id="about__title">인구 :</div>
+              <div id="population__value" class="about__value"></div>
+              <div class="unit">명</div>
+            </div>
+            <div id="about__content" class="area">
+              <div id="about__title">면적 :</div>
+              <div id="area__value" class="about__value"></div>
+              <div class="unit">km<sup>2</sup></div>
+            </div>
+            <div id="about__content" class="gdp">
+              <div id="about__title">GDP :</div>
+              <div id="gdp__value" class="about__value"></div>
+              <div class="unit">USD</div>
+            </div>
+          </div>
+          <div
+            class="korea__map"
+            id="map"
+            style="width: 500px; height: 400px"
+          ></div>
+        </div>
+      </div>
+    </section>
+  </body>
+</html>
