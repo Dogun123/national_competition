@@ -1094,7 +1094,7 @@ p {
   display: flex;
   flex-direction: column;
   position: relative;
-  bottom: 490px;
+  bottom: 505px;
   left: 95px;
   width: 676px;
   height: 420px;
@@ -1102,12 +1102,12 @@ p {
 }
 
 .super__old {
-  flex-basis: 20%;
+  flex-basis: 20.5%;
   background-color: rgba(250, 36, 36, 0.3);
 }
 
 .very__old {
-  flex-basis: 24%;
+  flex-basis: 24.3%;
   background-color: rgb(248, 245, 61, 0.3);
 }
 
