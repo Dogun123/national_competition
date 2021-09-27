@@ -1143,7 +1143,7 @@ scriptOpen.addEventListener('click',()=>{
 })
     
 
-    const content =["대한민국은 현재 태어나는 아이는 점점 줄어들고../노인 인구는 점점 늘어나고 있어서 큰일이라고 해.","계속해서 아이를 낳지 않는다면 2050년 대한민국은 인구 구성은 어떤 모습일까?","인구 피라미드 활동지에 2050년 인구 피라미드를 그려보고 카메라를 실행시켜 비추면 네가 2050년 인구 피라미드를 잘 예측했는지 확인해 줄게!","대단한데? 이걸 맞추다니!","더이상 가르칠게 없겠다~/난 이만 가볼게! 안녕~"];
+    const content =["대한민국은 현재 태어나는 아이는 점점 줄어들고../노인 인구는 점점 늘어나고 있어서 큰일이라고 해.","계속해서 아이를 낳지 않는다면 2050년 대한민국은 인구 구성은 어떤 모습일까?","인구 피라미드 활동지에 2050년 인구 피라미드를 그려보고 카메라를 실행시켜 비추면 네가 2050년 인구 피라미드를 잘 예측했는지 확인해 줄게!"];
 
   
 
@@ -1159,18 +1159,6 @@ scriptOpen.addEventListener('click',()=>{
 
     function typing(){
       typingAudio.play();
-      // if(index<content[typingCount].length){
-      //   if(content[typingCount][index]=="/"){
-      //     var a = document.createElement('br')
-      //     text.append(a)
-      //     index++
-      //   }
-      //   text.textContent += content[typingCount][index++]
-      // } else{
-      //   skipButton.classList.add('skip__animation');
-      //   clearInterval(typing);
-      // }
-    // 바로넘어가기 방지(버튼을 눌렀을때만 넘어가도록)
       
     if(index<content[typingCount].length){
       if(content[typingCount][index]=="/"){
@@ -1259,7 +1247,7 @@ scriptOpen.addEventListener('click',()=>{
     })
 
     scriptButton1.addEventListener('click',()=>{
-      goNext();
+      // goNext();
       wrapper.style.display='none';
       camOn.style.pointerEvents='auto';
     })
