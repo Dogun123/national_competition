@@ -105,7 +105,7 @@ const chartResume = document.querySelector('.population__chart__resume');
 const typingAudio = new Audio('public/music/Keyboard Typing.wav');
 
 
-let yearNumCount = 0
+let yearNumCount = 20;
 
 const nSecond = 5,
       resolutionMS = 33;
@@ -407,6 +407,7 @@ const dropDown = document.querySelector('.drop__down');
 let yearNum = Number(year.innerHTML)
 
 
+
 dropUp.addEventListener('click',()=>{
   if(yearNum == 2050) {
     console.log(yearNum);
@@ -531,9 +532,11 @@ aging.innerHTML = (aging_data[20].toFixed(1)).toString()+"%";
 // 팝업차트 
 
 // 1.드래그앤 드롭
+
 dragElement(document.getElementById("popup1"));
 dragElement(document.getElementById("popup2"));
 dragElement(document.getElementById("popup3"));
+dragElement(document.getElementById("popup4"));
 
 function dragElement(elmnt) {
   var pos1 = 0, pos2 = 0, pos3 = 0, pos4 = 0;
@@ -581,9 +584,12 @@ const popupAverage = document.querySelector('.popup__average__age');
 const popupAging = document.querySelector('.popup__aging');
 const populationTitle = document.querySelector('.population__title');
 const averageAgeContainer = document.querySelector('.average__age');
+const popup2020 = document.querySelector('.popup__2020');
 const agingContainer = document.querySelector('.aging__rate');
 const popupClose = document.querySelectorAll('.popup__close');
 const popupChart = document.querySelectorAll('.popup__chart');
+const popup2020Close = document.querySelector('.popup__2020__close')
+const pyramid = document.querySelector('.pyramid');
 
 
 
@@ -613,6 +619,11 @@ popupChart[2].addEventListener('click',()=>{
 popupTotal.style.display='none';
 popupAverage.style.display='none';
 popupAging.style.display='none';
+popup2020.style.display = 'none';
+
+pyramid.addEventListener('click',()=>{
+  popup2020.style.display='';
+})
 
 populationTitle.addEventListener('click',()=>{
   zIndexVal = zIndexVal+1
@@ -652,6 +663,13 @@ popupClose[1].addEventListener('click',()=>{
 popupClose[2].addEventListener('click',()=>{
   setTimeout(()=>{
     popupAging.style.display = 'none';
+  },1)
+  
+})
+
+popup2020Close.addEventListener('click',()=>{
+  setTimeout(()=>{
+    popup2020.style.display = 'none';
   },1)
   
 })
@@ -930,7 +948,8 @@ async function loop() {
       await webcam.stop();
       await webcam2.stop();
       setTimeout(()=>{
-        machineSection.style.display='none'
+        machineSection.style.display='none';
+        popup2020.style.display = 'none';
       },2000);
       setTimeout(()=>{
         resultSection.style.display=''

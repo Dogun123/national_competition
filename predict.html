@@ -240,12 +240,13 @@
     </section>
 
     <section id="webcam-chart" class="section_chart">
-        <div class="predict_title_container">        <div class="predict_title">2050년 인구를 예측해 보세요.</div></div>
+        <div class="predict_title_container" style = "height: 70px;">        <div class="predict_title">2050년 인구를 예측해 보세요.</div></div>
         <div class="webcam-div-down" style="padding:0px 5px">
             *<a style="color:red">인구 피라미드 활동지</a>를 다운받으려면
             <a href="/public/population-pyramid.hwp"  style="font-size: 18px; font-weight: 600;">여기</a>
             를 클릭하세요.
         </div>
+        <button class="pyramid">2020년 인구 피라미드 확인</button>
         <div id="webcam-container">
             <div class="webcam-div">
                 <div class="webcam-div-expl" style="font-size: 22px; font-style: normal; margin-top:130px; margin-bottom:50px;padding:0px 20px;font-style:italic;">
@@ -257,6 +258,14 @@
             </div>    
         </div>
         <div id="label-container"></div>
+
+        <div id="popup4" class="popup__chart2 popup__2020">
+            <div id="popup1header" class="popup__chart__navbar">
+                <!-- 폰트어썸아이콘 -->
+                <i class="fas fa-times popup__2020__close"></i>
+            </div>
+            <div class="pyramid__2020"></div>
+        </div>
 
 
     </section>

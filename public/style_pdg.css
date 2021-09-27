@@ -1032,8 +1032,33 @@ p {
   cursor: default;
 }
 
+.popup__chart2 {
+  width: 600px;
+  height: 360px;
+  position: absolute;
+  top: 150px;
+  border: 1px solid var(--color-black);
+  background-color: white;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+  border-radius: 5px;
+  /* z-index: 1; */
+  cursor: default;
+}
+
+.pyramid__2020 {
+  height: 359px;
+  background-image: url(imgs/pyramid-2020.png);
+  
+}
+/* 600,349 */
+
 #popup1 {
   left: 240px;
+}
+
+#popup4 {
+  left: 50px;
+  top: 100px;
 }
 
 .popup__average__age {
@@ -1050,13 +1075,18 @@ p {
   background-color: rgb(224, 222, 222);
 }
 
-.popup__close {
+.popup__close,
+.popup__2020__close {
   margin-right: 5px;
   border: 0px 5px;
   cursor: pointer;
 }
 
 .popup__close:hover {
+  color: red;
+}
+
+.popup__2020__close:hover {
   color: red;
 }
 
@@ -1903,4 +1933,21 @@ p {
   position: relative;
   bottom:0px;
   left:320px;
+}
+
+
+.pyramid {
+  margin-top: 10px;
+  font-size: 20px;
+  background-color: rgb(213, 240, 191);
+  border: 1px solid rgb(17, 17, 17);
+  border-radius: 5px;
+}
+
+.pyramid:hover {
+  background-color: rgb(181, 233, 139);
+}
+
+#webcam-chart {
+  padding:0px;
 }
